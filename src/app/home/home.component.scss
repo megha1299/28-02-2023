@@ -1,0 +1,13 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+@import '../../assets/scss/base.scss';
+
+.home{
+    padding: 12em;
+
+    .btn{
+        &:hover{
+            color: red;
+        }
+    }
+}

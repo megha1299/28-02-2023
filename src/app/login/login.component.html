@@ -1,0 +1,30 @@
+<div class="login">
+    <div class="container">
+      <h1 class="h1 text-center p-3">Login</h1>
+        <form [formGroup]="formlog"  (ngSubmit)="login(formlog)"
+          class="form p-4" style="border: 1px solid gray; background: lavender;">
+            <p class="para">User: test</p>
+            <p class="para">Password: test</p>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form6Example1">User</label>
+              <input type="text" name="user" formControlName="user" id="form6Example1" class="form-control" />
+              <span class="text-danger" *ngIf="formlog.get('user')?.hasError('required') && (formlog.get('user')?.dirty || formlog.get('user')?.touched)">This field is required</span>
+              <span class="text-danger" *ngIf="formlog.get('user')?.hasError('pattern') && (formlog.get('user')?.dirty || formlog.get('user')?.touched)">Should not contain number </span>
+              
+            </div>
+        
+            <!-- password input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form6Example2">Password</label>
+              <input type="password" formControlName="password" name="password" id="form6Example2" class="form-control" />
+              <span class="getError" *ngIf="formlog.get('password')?.invalid && formlog.get('password')?.touched">This field is required</span>
+            </div>
+
+            <div class="button text-center">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary m-1 p-2 btn-block mb-4">Login</button>
+            </div>
+          </form>
+    </div>
+</div>
